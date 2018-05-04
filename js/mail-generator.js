@@ -3,7 +3,7 @@
 
 // email wrapper
 
-var emailWrapper = document.createElement("div");
+  var emailWrapper = document.createElement("div");
   emailWrapper.id = "emailWrapperId";
   // console.log(emailWrapper);
   document.body.appendChild(emailWrapper);
@@ -47,7 +47,7 @@ var emailWrapper = document.createElement("div");
   // Trigger Email Body
 
   var clickThis = document.getElementsByClassName("subjectLineClass");
-  console.log(clickThis);
+    console.log(clickThis);
 
   for (i=0; i<clickThis.length; i++){
     clickThis[i].addEventListener("click", showMessage)
@@ -64,12 +64,14 @@ var emailWrapper = document.createElement("div");
 
 // below provided by DevLeague
 
-  function loadGeeMails(){
+  function loadGeeMails(subject){
     for (var i = 0; i < 10; i++){
       var message = generateMessage();
       window.geemails.push(message);
+      // console.log(message);
     }
   }
+  console.log(loadGeeMails());
 
   function generateMessage(date){
     var message = {};
@@ -79,10 +81,18 @@ var emailWrapper = document.createElement("div");
     message.body = getRandomElement(body);
     return message;
   }
+  generateMessage()
+  console.log(generateMessage());
 
   function getRandomElement(arr){
     return arr[Math.floor(Math.random() * arr.length)];
   }
+  getRandomElement(subject);
+  getRandomElement(sender);
+  getRandomElement(body);
+  // console.log(getRandomElement(subject));
+  // console.log(getRandomElement(sender));
+  // console.log(getRandomElement(body));
 
   function getNewMessage(){
     var now = new Date();
@@ -90,13 +100,15 @@ var emailWrapper = document.createElement("div");
   }
 
   function getRandomDate(){
-    var year = 2013;
+    var year = 2017;
     var month = Math.floor(Math.random() * 12) + 1;
     var day = Math.floor(Math.random() * 30) + 1;
     var hours = Math.floor(Math.random() * 12) + 1;
     var minutes = Math.floor(Math.random() * 59) + 1;
     return new Date(year, month, day, hours, minutes);
   }
+  getRandomDate();
+  // console.log(getRandomDate());
 
   //load intial GeeMail data to window object
   window.geemails = [];
