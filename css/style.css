@@ -27,3 +27,8 @@ body {
   font-size: 10px;
   display: none;
 }
+
+.testClass {
+  font-size: 15px;
+  display: block;
+}
