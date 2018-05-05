@@ -77,13 +77,18 @@ console.log(test);
     for (var i=0; i<geemails.length; i++){
       var subjectLine = document.createElement("div");
       subjectLine.className = "col-1 subjectLineClass";
-      subjectLine.innerHTML = data[i].subject;
+      subjectLine.innerHTML = "Subject: " + data[i].subject;
       emailWrapper.appendChild(subjectLine);
+
+      var dateLine = document.createElement("div");
+      dateLine.className = "col-1 dateLineClass";
+      dateLine.innerHTML = "Date: " + data[i].date;
+      subjectLine.appendChild(dateLine);
 
       var senderLine = document.createElement("div");
       senderLine.className = "col-1 senderLineClass";
-      senderLine.innerHTML = data[i].sender;
-      subjectLine.appendChild(senderLine);
+      senderLine.innerHTML = "From: " + data[i].sender;
+      dateLine.appendChild(senderLine);
 
       var bodyLine = document.createElement("div");
       bodyLine.className = "col-1 emailBodyContent";
@@ -95,9 +100,7 @@ console.log(test);
 
 // trigger body content
 
-    var showBody = document.getElementsByClassName("subjectLineClass");
-    // console.log(showBody);
-
+  var showBody = document.getElementsByClassName("subjectLineClass");
     for (i=0; i<showBody.length; i++){
       showBody[i].addEventListener("click", showMessage);
   }
