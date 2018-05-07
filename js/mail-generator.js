@@ -72,7 +72,6 @@ console.log(test);
 
   var emailWrapper = document.createElement("div");
     emailWrapper.id = "col-4 emailWrapperId";
-    // emailWrapper.addEventListener("click", showMessage);
     inboxWrapper.appendChild(emailWrapper);
 
   function renderGeemails(data){
@@ -103,9 +102,9 @@ console.log(test);
       bodyLine.innerHTML = data[i].body;
       emailLine.appendChild(bodyLine);
 
-      var lineBreak = document.createElement("hr");
-      lineBreak.className = "col-4 hrClass";
-      emailLine.appendChild(lineBreak);
+      var line = document.createElement("hr");
+      line.className = "hrClass";
+      emailWrapper.appendChild(line);
 
     }
   }

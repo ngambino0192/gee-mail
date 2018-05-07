@@ -14,7 +14,7 @@ body {
 [class*="col-"] {
     float: left;
     padding: 15px;
-    border: 1px solid red;
+  /*  border: 1px solid red;*/
 }
 
 .col-1 {width: 25%;}
@@ -57,6 +57,11 @@ body {
   width: auto;
 }
 
+.emailLine{
+  margin: auto;
+  width: auto;
+}
+
 .subjectLineClass {
 	float: left;
   font-size: 15px;
@@ -88,8 +93,10 @@ body {
 }
 
 .hrClass{
-  background-color: black;
+  color: black;
   box-sizing: border-box;
+  margin-top: 20px;
+  width: 98%;
 }
 
 
