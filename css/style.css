@@ -3,32 +3,106 @@ body {
 	font-family: "Open Sans";
 }
 
-#emailWrapperId {
+/*columns*/
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+    border: 1px solid red;
+}
+
+.col-1 {width: 25%;}
+.col-2 {width: 50%;}
+.col-3 {width: 25%;}
+.col-4 {width: 100%;}
+.col-5 {width: 100%;}
+/*.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}*/
+
+
+
+#inboxWrapperId {
 	margin: auto;
-    width: 50%;
-    height: relative;
-    padding: 1px;
-    background-color: white;
-    border-style: solid;
-    border-width: 1px;
+  width: auto;
+  height: relative;
+  padding: 1px;
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  box-sizing: border-box;
+}
+
+#emailHeaderId{
+  margin: auto;
+  width: auto;
+  height: 50px;
+  background-color: salmon;
+  font-size: 15px;
+}
+
+#emailWrapperId{
+  /*background-color: darkgray;*/
+  margin: auto;
+  width: auto;
 }
 
 .subjectLineClass {
-	font-size: 15px;
+	float: left;
+  font-size: 15px;
 	display: block;
+  background-color: dodgerBlue;
+  box-sizing: border-box;
 }
 
 .senderLineClass {
-	font-size: 10px;
+	float: left;
+  font-size: 15px;
 	display: block;
-}
-
-.emailBodyContent{
-  font-size: 10px;
-  display: none;
+  box-sizing: border-box;
 }
 
 .dateLineClass {
+  float: left;
   font-size: 10px;
   display: block;
+  box-sizing: border-box;
 }
+
+.emailBodyContent{
+  float: left;
+  font-size: 10px;
+  display: none;
+  background-color: orange;
+  box-sizing: border-box;
+}
+
+.hrClass{
+  background-color: black;
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
