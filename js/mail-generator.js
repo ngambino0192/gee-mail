@@ -72,44 +72,46 @@ console.log(test);
 
   var emailWrapper = document.createElement("div");
     emailWrapper.id = "col-4 emailWrapperId";
-    emailWrapper.addEventListener("click", showMessage);
+    // emailWrapper.addEventListener("click", showMessage);
     inboxWrapper.appendChild(emailWrapper);
-
-// render emails with DOM
 
   function renderGeemails(data){
     for (var i=0; i<geemails.length; i++){
       
+      var emailLine = document.createElement("div");
+      emailLine.className = "col-4 emailLineClass";
+      emailLine.addEventListener("click", showMessage);
+      emailWrapper.appendChild(emailLine);
+
       var senderLine = document.createElement("div");
       senderLine.className = "col-1 senderLineClass";
       senderLine.innerHTML = "From: " + data[i].sender;
-      emailWrapper.appendChild(senderLine);
+      emailLine.appendChild(senderLine);
 
       var subjectLine = document.createElement("div");
       subjectLine.className = "col-2 subjectLineClass";
       subjectLine.innerHTML = "Subject: " + data[i].subject;
-      emailWrapper.appendChild(subjectLine);
+      emailLine.appendChild(subjectLine);
 
       var dateLine = document.createElement("div");
       dateLine.className = "col-3 dateLineClass";
       dateLine.innerHTML = "Date: " + data[i].date;
-      emailWrapper.appendChild(dateLine);
+      emailLine.appendChild(dateLine);
 
       var bodyLine = document.createElement("div");
       bodyLine.className = "col-4 emailBodyContent";
       bodyLine.innerHTML = data[i].body;
-      emailWrapper.appendChild(bodyLine);
+      emailLine.appendChild(bodyLine);
 
       var lineBreak = document.createElement("hr");
       lineBreak.className = "col-4 hrClass";
-      emailWrapper.appendChild(lineBreak);
-
+      emailLine.appendChild(lineBreak);
 
     }
   }
   renderGeemails(geemails);
 
-// trigger body content
+  // toggle body content
 
   function showMessage(){
     var toggle = this.querySelectorAll(".emailBodyContent")[0];
