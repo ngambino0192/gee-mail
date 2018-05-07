@@ -52,6 +52,7 @@ console.log(test);
   }
   getRandomDate();
 
+
 //load intial GeeMail data to window object
 
   window.geemails = [];
@@ -71,34 +72,39 @@ console.log(test);
     inboxWrapper.appendChild(emailHeader);
 
   var emailWrapper = document.createElement("div");
-    emailWrapper.id = "col-4 emailWrapperId";
+    emailWrapper.id = "col-5 emailWrapperId";
     inboxWrapper.appendChild(emailWrapper);
 
   function renderGeemails(data){
     for (var i=0; i<geemails.length; i++){
       
       var emailLine = document.createElement("div");
-      emailLine.className = "col-4 emailLineClass";
+      emailLine.className = "col-6 emailLineClass";
       emailLine.addEventListener("click", showMessage);
       emailWrapper.appendChild(emailLine);
 
+      var carrotRight = document.createElement("div");
+      carrotRight.className = "col-1 carrotClass";
+      carrotRight.innerHTML = "<img src=\"images/right_carrot.svg\"/>";
+      emailLine.appendChild(carrotRight);
+
       var senderLine = document.createElement("div");
-      senderLine.className = "col-1 senderLineClass";
+      senderLine.className = "col-2 senderLineClass";
       senderLine.innerHTML = "From: " + data[i].sender;
       emailLine.appendChild(senderLine);
 
       var subjectLine = document.createElement("div");
-      subjectLine.className = "col-2 subjectLineClass";
+      subjectLine.className = "col-3 subjectLineClass";
       subjectLine.innerHTML = "Subject: " + data[i].subject;
       emailLine.appendChild(subjectLine);
 
       var dateLine = document.createElement("div");
-      dateLine.className = "col-3 dateLineClass";
+      dateLine.className = "col-4 dateLineClass";
       dateLine.innerHTML = "Date: " + data[i].date;
       emailLine.appendChild(dateLine);
 
       var bodyLine = document.createElement("div");
-      bodyLine.className = "col-4 emailBodyContent";
+      bodyLine.className = "col-5 emailBodyContent";
       bodyLine.innerHTML = data[i].body;
       emailLine.appendChild(bodyLine);
 
