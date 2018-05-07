@@ -104,7 +104,13 @@ body {
   width: 98%;
 }
 
+.carrotClassRight{
+  display: block;
+}
 
+.carrotClassDown{
+  display: none;
+}
 
 
 

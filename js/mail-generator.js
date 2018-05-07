@@ -84,9 +84,14 @@ console.log(test);
       emailWrapper.appendChild(emailLine);
 
       var carrotRight = document.createElement("div");
-      carrotRight.className = "col-1 carrotClass";
+      carrotRight.className = "col-1 carrotClassRight";
       carrotRight.innerHTML = "<img src=\"images/right_carrot.svg\"/>";
       emailLine.appendChild(carrotRight);
+
+      var carrotDown = document.createElement("div");
+      carrotDown.className = "col-1 carrotClassDown";
+      carrotDown.innerHTML = "<img src=\"images/down_carrot.svg\"/>";
+      emailLine.appendChild(carrotDown);
 
       var senderLine = document.createElement("div");
       senderLine.className = "col-2 senderLineClass";
@@ -124,6 +129,18 @@ console.log(test);
         toggle.style.display = "block";
       }else{
         toggle.style.display = "none";
+      }
+    var toggleCarrot1 = this.querySelectorAll(".carrotClassRight")[0];
+      if(toggleCarrot1.style.display === "block"){
+        toggleCarrot1.style.display = "none";
+      }else{
+        toggleCarrot1.style.display = "block";
+      }
+    var toggleCarrot2 = this.querySelectorAll(".carrotClassDown")[0];
+      if(toggleCarrot1.style.display === "none"){
+        toggleCarrot2.style.display = "block";
+      }else{
+        toggleCarrot2.style.display = "none";
       }
   }
 
