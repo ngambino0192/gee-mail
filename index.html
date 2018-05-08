@@ -3,7 +3,91 @@
 		<link href="css/style.css" rel="stylesheet" media="screen">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <script>
-      window.onload = function (){
+    window.onload = function (){
+
+	  	var inboxWrapper = document.createElement("div");
+	    inboxWrapper.id = "inboxWrapperId";
+	    document.body.appendChild(inboxWrapper);
+
+	  	var emailHeader = document.createElement("div");
+	    emailHeader.id = "emailHeaderId";
+	    emailHeader.innerHTML = "INBOX";
+	    inboxWrapper.appendChild(emailHeader);
+
+	  	var emailWrapper = document.createElement("div");
+	    emailWrapper.id = "col-5 emailWrapperId";
+	    inboxWrapper.appendChild(emailWrapper);
+
+  		function renderGeemails(data){
+    	for (var i=0; i<geemails.length; i++){
+      
+		  	var emailLine = document.createElement("div");
+		  	emailLine.className = "col-6 emailLineClass";
+		  	emailLine.addEventListener("click", showMessage);
+		  	emailWrapper.appendChild(emailLine);
+
+		  	var carrotRight = document.createElement("div");
+		  	carrotRight.className = "col-1 carrotClassRight";
+		  	carrotRight.innerHTML = "<img src=\"images/right_carrot.svg\"/>";
+		  	emailLine.appendChild(carrotRight);
+
+		  	var carrotDown = document.createElement("div");
+		  	carrotDown.className = "col-1 carrotClassDown";
+		  	carrotDown.innerHTML = "<img src=\"images/down_carrot.svg\"/>";
+		  	emailLine.appendChild(carrotDown);
+
+		  	var senderLine = document.createElement("div");
+		  	senderLine.className = "col-2 senderLineClass";
+		  	senderLine.innerHTML = "From: " + data[i].sender;
+		  	emailLine.appendChild(senderLine);
+
+		  	var subjectLine = document.createElement("div");
+		  	subjectLine.className = "col-3 subjectLineClass";
+		  	subjectLine.innerHTML = "Subject: " + data[i].subject;
+		  	emailLine.appendChild(subjectLine);
+
+		  	var dateLine = document.createElement("div");
+		  	dateLine.className = "col-4 dateLineClass";
+		  	dateLine.innerHTML = "Date: " + data[i].date;
+		  	emailLine.appendChild(dateLine);
+
+		  	var bodyLine = document.createElement("div");
+		  	bodyLine.className = "col-5 emailBodyContent";
+		  	bodyLine.innerHTML = data[i].body;
+		  	emailLine.appendChild(bodyLine);
+
+		  	var line = document.createElement("hr");
+		  	line.className = "hrClass";
+		  	emailWrapper.appendChild(line);
+    		}
+  		}
+  	renderGeemails(geemails);
+
+  // toggle body content
+
+  	function showMessage(){
+
+    	var toggle = this.querySelectorAll(".emailBodyContent")[0];
+      	if(toggle.style.display === "none"){
+        toggle.style.display = "block";
+      	}else{
+        toggle.style.display = "none";
+      	}
+
+    	var toggleCarrot1 = this.querySelectorAll(".carrotClassRight")[0];
+      	if(toggleCarrot1.style.display === "block"){
+        toggleCarrot1.style.display = "none";
+      	}else{
+        toggleCarrot1.style.display = "block";
+      	}
+
+    	var toggleCarrot2 = this.querySelectorAll(".carrotClassDown")[0];
+      	if(toggleCarrot1.style.display === "none"){
+        toggleCarrot2.style.display = "block";
+      	}else{
+        toggleCarrot2.style.display = "none";
+      	}
+  	}
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
     };
