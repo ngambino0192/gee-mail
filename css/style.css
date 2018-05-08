@@ -48,6 +48,25 @@ body {
   margin: auto;
   width: auto;
   height: 50px;
+  padding-top: 12.5px;
+  text-align: center;
+  font-size: 25px;
+  background-color: salmon;
+}
+
+#emailFooterId{
+  margin: auto;
+  width: auto;
+  height: 50px;
+  background-color: salmon;
+  font-size: 15px;
+}
+
+#inboxCountId{
+  margin: auto;
+  width: auto;
+  height: 50px;
+  padding-top: 12.5px;
   background-color: salmon;
   font-size: 15px;
 }

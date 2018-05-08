@@ -18,6 +18,10 @@
 	    emailWrapper.id = "col-5 emailWrapperId";
 	    inboxWrapper.appendChild(emailWrapper);
 
+	    // var emailFooter = document.createElement("div");
+	    // emailFooter.id = "emailFooterId";
+	    // emailWrapper.appendChild(emailFooter);
+
   		function renderGeemails(data){
     	for (var i=0; i<geemails.length; i++){
       
@@ -61,33 +65,50 @@
 		  	emailWrapper.appendChild(line);
     		}
   		}
-  	renderGeemails(geemails);
+  		renderGeemails(geemails);
 
-  // toggle body content
+  	// toggle body content
 
-  	function showMessage(){
+  		function showMessage(){
 
-    	var toggle = this.querySelectorAll(".emailBodyContent")[0];
-      	if(toggle.style.display === "none"){
-        toggle.style.display = "block";
-      	}else{
-        toggle.style.display = "none";
-      	}
+	    	var toggle = this.querySelectorAll(".emailBodyContent")[0];
+	      	if(toggle.style.display === "none"){
+	        toggle.style.display = "block";
+	      	}else{
+	        toggle.style.display = "none";
+	      	}
 
-    	var toggleCarrot1 = this.querySelectorAll(".carrotClassRight")[0];
-      	if(toggleCarrot1.style.display === "block"){
-        toggleCarrot1.style.display = "none";
-      	}else{
-        toggleCarrot1.style.display = "block";
-      	}
+	    	var toggleCarrot1 = this.querySelectorAll(".carrotClassRight")[0];
+	      	if(toggleCarrot1.style.display === "block"){
+	        toggleCarrot1.style.display = "none";
+	      	}else{
+	        toggleCarrot1.style.display = "block";
+	      	}
 
-    	var toggleCarrot2 = this.querySelectorAll(".carrotClassDown")[0];
-      	if(toggleCarrot1.style.display === "none"){
-        toggleCarrot2.style.display = "block";
-      	}else{
-        toggleCarrot2.style.display = "none";
-      	}
-  	}
+	    	var toggleCarrot2 = this.querySelectorAll(".carrotClassDown")[0];
+	      	if(toggleCarrot1.style.display === "none"){
+	        toggleCarrot2.style.display = "block";
+	      	}else{
+	        toggleCarrot2.style.display = "none";
+	      	}
+	  	}
+
+	// inbox counter
+
+		var inboxCounter = [];
+		inboxCounter.push(geemails.length);
+
+		var displayInboxCount = document.createElement("div");
+		displayInboxCount.id = "inboxCountId";
+		displayInboxCount.innerHTML = "Inbox: (" + inboxCounter + ")";
+		inboxWrapper.appendChild(displayInboxCount);
+
+	    var emailFooter = document.createElement("div");
+	    emailFooter.id = "emailFooterId";
+	    inboxWrapper.appendChild(emailFooter);
+
+
+
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
     };
