@@ -2,61 +2,62 @@
 	<head>
 		<link href="css/style.css" rel="stylesheet" media="screen">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<title>Geemail</title>
     <script>
     window.onload = function (){
 
-	  	var inboxWrapper = document.createElement("div");
-	    inboxWrapper.id = "inboxWrapperId";
-	    document.body.appendChild(inboxWrapper);
-
 	  	var emailHeader = document.createElement("div");
 	    emailHeader.id = "emailHeaderId";
-	    emailHeader.innerHTML = "INBOX";
-	    inboxWrapper.appendChild(emailHeader);
+	    emailHeader.innerHTML = "GEEMAIL";
+	    document.body.appendChild(emailHeader);
+
+	  	var rightWindow = document.createElement("div");
+	  	rightWindow.id = "rightWindowId";
+	  	document.body.appendChild(rightWindow);
+
+	  	var inboxWrapper = document.createElement("div");
+	    inboxWrapper.id = "inboxWrapperId";
+	    rightWindow.appendChild(inboxWrapper);
 
 	  	var emailWrapper = document.createElement("div");
-	    emailWrapper.id = "col-5 emailWrapperId";
+	    emailWrapper.id = "col-6 emailWrapperId";
 	    inboxWrapper.appendChild(emailWrapper);
-
-	    // var emailFooter = document.createElement("div");
-	    // emailFooter.id = "emailFooterId";
-	    // emailWrapper.appendChild(emailFooter);
 
   		function renderGeemails(data){
     	for (var i=0; i<geemails.length; i++){
       
 		  	var emailLine = document.createElement("div");
-		  	emailLine.className = "col-6 emailLineClass";
+		  	emailLine.className = "col-7 emailLineClass";
 		  	emailLine.addEventListener("click", showMessage);
 		  	emailWrapper.appendChild(emailLine);
 
 		  	var carrotRight = document.createElement("div");
-		  	carrotRight.className = "col-1 carrotClassRight";
+		  	carrotRight.className = "col-2 carrotClassRight";
 		  	carrotRight.innerHTML = "<img src=\"images/right_carrot.svg\"/>";
 		  	emailLine.appendChild(carrotRight);
 
 		  	var carrotDown = document.createElement("div");
-		  	carrotDown.className = "col-1 carrotClassDown";
+		  	carrotDown.className = "col-2 carrotClassDown";
 		  	carrotDown.innerHTML = "<img src=\"images/down_carrot.svg\"/>";
 		  	emailLine.appendChild(carrotDown);
 
 		  	var senderLine = document.createElement("div");
-		  	senderLine.className = "col-2 senderLineClass";
+		  	senderLine.className = "col-3 senderLineClass";
 		  	senderLine.innerHTML = "From: " + data[i].sender;
 		  	emailLine.appendChild(senderLine);
 
 		  	var subjectLine = document.createElement("div");
-		  	subjectLine.className = "col-3 subjectLineClass";
+		  	subjectLine.className = "col-4 subjectLineClass";
 		  	subjectLine.innerHTML = "Subject: " + data[i].subject;
 		  	emailLine.appendChild(subjectLine);
 
 		  	var dateLine = document.createElement("div");
-		  	dateLine.className = "col-4 dateLineClass";
+		  	dateLine.className = "col-5 dateLineClass";
 		  	dateLine.innerHTML = "Date: " + data[i].date;
 		  	emailLine.appendChild(dateLine);
 
 		  	var bodyLine = document.createElement("div");
-		  	bodyLine.className = "col-5 emailBodyContent";
+		  	bodyLine.className = "col-6 emailBodyContent";
 		  	bodyLine.innerHTML = data[i].body;
 		  	emailLine.appendChild(bodyLine);
 
@@ -98,10 +99,8 @@
 		var inboxCounter = [];
 		inboxCounter.push(geemails.length);
 
-		var displayInboxCount = document.createElement("div");
-		displayInboxCount.id = "inboxCountId";
+		var displayInboxCount = document.getElementsByTagName("a")[0];
 		displayInboxCount.innerHTML = "Inbox: (" + inboxCounter + ")";
-		inboxWrapper.appendChild(displayInboxCount);
 
 	    var emailFooter = document.createElement("div");
 	    emailFooter.id = "emailFooterId";
@@ -115,6 +114,12 @@
     </script>
 	</head>
 	<body>
+		<div class="sidenav">
+  			<a href="#about">About</a>
+  			<a href="#services">Refresh Inbox</a>
+  			<a href="#clients">Filter Spam</a>
+  			<a href="#contact">New Mail</a>
+		</div>
 		<!-- <div class="container" id="main">
 			Build Me!
 		</div> -->

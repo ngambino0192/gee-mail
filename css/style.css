@@ -17,15 +17,15 @@ body {
   /*  border: 1px solid red;*/
 }
 
-.col-1 {width: 5%;}
-.col-2 {width: 20%;}
-.col-3 {width: 50%;}
-.col-4 {width: 25%;}
-.col-5 {width: 100%;}
+.col-1 {width: 10%;}
+.col-2 {width: 2%;}
+.col-3 {width: 20%;}
+.col-4 {width: 50%;}
+.col-5 {width: 28%;}
 .col-6 {width: 100%;}
-/*.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
+
+.col-7 {width: 100%;}
+.col-8 {width: 90%;}
 .col-9 {width: 75%;}
 .col-10 {width: 83.33%;}
 .col-11 {width: 91.66%;}
@@ -46,40 +46,65 @@ body {
 
 #emailHeaderId{
   margin: auto;
-  width: auto;
+  width: 100%;
   height: 50px;
-  padding-top: 12.5px;
   text-align: center;
   font-size: 25px;
   background-color: salmon;
 }
 
-#emailFooterId{
+/*#emailFooterId{
   margin: auto;
   width: auto;
   height: 50px;
   background-color: salmon;
   font-size: 15px;
-}
+}*/
 
 #inboxCountId{
   margin: auto;
   width: auto;
   height: 50px;
-  padding-top: 12.5px;
-  background-color: salmon;
+  padding-top: 25px;
+  background-color: cornflowerblue;
   font-size: 15px;
 }
 
 #emailWrapperId{
-  /*background-color: darkgray;*/
   margin: auto;
   width: auto;
 }
 
+#rightWindowId{
+    margin-left: 125px;
+    height: 100%;
+}
+
+.sidenav {
+    height: auto;
+    width: 125px;
+    margin-top: 5%;
+    position: fixed;
+    z-index: 1;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
 .emailLineClass{
-/*  margin: auto;
-  width: auto;*/
   box-sizing: border-box;
 }
 
@@ -87,12 +112,10 @@ body {
 	float: left;
   font-size: 15px;
 	display: block;
- /* background-color: dodgerBlue;*/
   box-sizing: border-box;
 }
 
 .senderLineClass {
-/*	background-color: gray;*/
   float: left;
   font-size: 15px;
 	display: block;
