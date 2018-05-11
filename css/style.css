@@ -32,7 +32,6 @@ body {
 .col-12 {width: 100%;}*/
 
 
-
 #inboxWrapperId {
 	margin: auto;
   width: auto;
@@ -49,17 +48,18 @@ body {
   width: 100%;
   height: 50px;
   text-align: center;
+  padding-top: 12.5px;
   font-size: 25px;
   background-color: salmon;
 }
 
-/*#emailFooterId{
+#emailFooterId{
   margin: auto;
-  width: auto;
+  margin-left: -10%;
+  width: 110%;
   height: 50px;
   background-color: salmon;
-  font-size: 15px;
-}*/
+}
 
 #inboxCountId{
   margin: auto;
@@ -76,36 +76,56 @@ body {
 }
 
 #rightWindowId{
-    margin-left: 125px;
-    height: 100%;
+  margin-left: 125px;
+  height: 100%;
 }
 
 .sidenav {
-    height: auto;
-    width: 125px;
-    margin-top: 5%;
-    position: fixed;
-    z-index: 1;
-    background-color: #111;
-    overflow-x: hidden;
-    padding-top: 5px;
-    padding-bottom: 5px;
+  height: auto;
+  width: 125px;
+  margin-top: 5%;
+  position: fixed;
+  z-index: 1;
+  overflow-x: hidden;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 15px;
-    color: #818181;
-    display: block;
+ /* background-color: black;*/
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #4A4A4A;
+  display: block;
 }
 
 .sidenav a:hover {
-    color: #f1f1f1;
+    background-color: darkgray;
+}
+
+.sidenav button {
+  background-color: #FE870F;
+  width: 100%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  display: block;
+}
+
+.sidenav button:hover {
+    background-color: #FE670F;
 }
 
 .emailLineClass{
   box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.emailLineClass:hover {
+  background-color: darkgray;
 }
 
 .subjectLineClass {

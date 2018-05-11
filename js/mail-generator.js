@@ -45,7 +45,6 @@
     var minutes = Math.floor(Math.random() * 59) + 1;
     return new Date(year, month, day, hours, minutes);
   }
-  getRandomDate();
 
 //load intial GeeMail data to window object
 
