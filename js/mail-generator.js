@@ -53,6 +53,6 @@ var test = "test";
   window.geemails = [];
   console.log(window.geemails);
   window.getNewMessage = getNewMessage;
-  console.log(getNewMessage());
+  // console.log(getNewMessage());
   loadGeeMails();
 })();

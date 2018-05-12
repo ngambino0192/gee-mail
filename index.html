@@ -73,25 +73,11 @@
   		var newMail = setInterval(function(){ loadNewMail(); }, 2000);
   		var newMessageBlock = getNewMessage();
   		// console.log(newMessageBlock);
-  		var newArr = [];
-  		// geemails.push(newMessageBlock);
-
-  	// inbox counter
-
-		var inboxCounter = [];
-		inboxCounter.push(geemails.length);
-		console.log(inboxCounter);
-
-		var displayInboxCount = document.getElementsByTagName("a")[0];
-		displayInboxCount.innerHTML = "Inbox: (" + inboxCounter + ")";
-
-	    var emailFooter = document.createElement("div");
-	    emailFooter.id = "emailFooterId";
-	    rightWindow.appendChild(emailFooter);
 
   	// add new mail
 
   		function loadNewMail(){
+  	
   			var emailLine = document.createElement("div");
 		  	emailLine.className = "col-7 emailLineClass";
 		  	emailLine.addEventListener("click", showMessage);
@@ -131,16 +117,23 @@
 		  	line.className = "hrClass";
 		  	emailWrapper.appendChild(line);
 
-		  	geemails.push(getNewMessage);
-		// }
+	// countNewMail
+
+		  	var inboxCounter = geemails.length;
+			// inboxCounter.push(geemails.length);
+			console.log(inboxCounter);
+
+			var displayInboxCount = document.getElementsByTagName("a")[0];
+			displayInboxCount.innerHTML = "Inbox: (" + inboxCounter + ")";
+
+	    	var emailFooter = document.createElement("div");
+	    	emailFooter.id = "emailFooterId";
+	    	rightWindow.appendChild(emailFooter);
+
+		  	geemails.push(getNewMessage());
 
   		}
   		loadNewMail(getNewMessage);
-
-  // 		function getNewMail(data1) {
-  //   		setInterval(getNewMessage(), 2000);
-		// }
-		// getNewMail(getNewMessage);
 
   	// toggle body content
 
@@ -167,8 +160,6 @@
 	        toggleCarrot2.style.display = "none";
 	      	}
 	  	}
-
-
 
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
