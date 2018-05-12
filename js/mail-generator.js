@@ -27,6 +27,7 @@
     message.body = getRandomElement(body);
     return message;
   }
+ // generateMessage();
 
   function getRandomElement(arr){
     return arr[Math.floor(Math.random() * arr.length)];
@@ -36,6 +37,7 @@
     var now = new Date();
     return generateMessage(now);
   }
+  // console.log(getNewMessage());
 
   function getRandomDate(){
     var year = 2017;
@@ -49,7 +51,8 @@
 //load intial GeeMail data to window object
 
   window.geemails = [];
-  // console.log(window.geemails);
+  console.log(window.geemails);
   window.getNewMessage = getNewMessage;
+  console.log(getNewMessage());
   loadGeeMails();
 })();
