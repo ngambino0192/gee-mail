@@ -72,12 +72,25 @@
 
   		var newMail = setInterval(function(){ loadNewMail(); }, 2000);
   		var omega = getNewMessage();
+  		// console.log(omega);
   		var newArr = [];
-  		console.log(newArr);
-  		// geemails.push(getNewMessage);
+  		geemails.push(omega);
+
+  	// inbox counter
+
+		var inboxCounter = [];
+		inboxCounter.push(geemails.length);
+
+		var displayInboxCount = document.getElementsByTagName("a")[0];
+		displayInboxCount.innerHTML = "Inbox: (" + inboxCounter + ")";
+
+	    var emailFooter = document.createElement("div");
+	    emailFooter.id = "emailFooterId";
+	    rightWindow.appendChild(emailFooter);
+
+  	// add new mail
 
   		function loadNewMail(){
-  			// for (var i = 0; i < 100; i++){
   			var emailLine = document.createElement("div");
 		  	emailLine.className = "col-7 emailLineClass";
 		  	emailLine.addEventListener("click", showMessage);
@@ -152,18 +165,7 @@
 	      	}
 	  	}
 
-	// inbox counter
 
-		var inboxCounter = [];
-		inboxCounter.push(geemails.length);
-		// console.log(inboxCounter);
-
-		var displayInboxCount = document.getElementsByTagName("a")[0];
-		displayInboxCount.innerHTML = "Inbox: (" + inboxCounter + ")";
-
-	    var emailFooter = document.createElement("div");
-	    emailFooter.id = "emailFooterId";
-	    rightWindow.appendChild(emailFooter);
 
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
