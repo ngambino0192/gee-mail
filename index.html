@@ -71,12 +71,16 @@
      // set interval function
 
   		var newMail = setInterval(function(){ loadNewMail(); }, 2000);
-  		geemails.push(getNewMessage());
+  		var newMessageBlock = getNewMessage();
+  		// console.log(newMessageBlock);
+  		var newArr = [];
+  		// geemails.push(newMessageBlock);
 
   	// inbox counter
 
 		var inboxCounter = [];
 		inboxCounter.push(geemails.length);
+		console.log(inboxCounter);
 
 		var displayInboxCount = document.getElementsByTagName("a")[0];
 		displayInboxCount.innerHTML = "Inbox: (" + inboxCounter + ")";
@@ -88,7 +92,6 @@
   	// add new mail
 
   		function loadNewMail(){
-  			for (var i=0; i<1; i++){
   			var emailLine = document.createElement("div");
 		  	emailLine.className = "col-7 emailLineClass";
 		  	emailLine.addEventListener("click", showMessage);
@@ -106,28 +109,31 @@
 
 		  	var senderLine = document.createElement("div");
 		  	senderLine.className = "col-3 senderLineClass";
-		  	senderLine.innerHTML = "From: " + getNewMessage.sender;
+		  	senderLine.innerHTML = "From: " + newMessageBlock.sender;
 		  	emailLine.appendChild(senderLine);
 
 		  	var subjectLine = document.createElement("div");
 		  	subjectLine.className = "col-4 subjectLineClass";
-		  	subjectLine.innerHTML = "Subject: " + getNewMessage.subject;
+		  	subjectLine.innerHTML = "Subject: " + newMessageBlock.subject;
 		  	emailLine.appendChild(subjectLine);
 
 		  	var dateLine = document.createElement("div");
 		  	dateLine.className = "col-5 dateLineClass";
-		  	dateLine.innerHTML = "Date: " + getNewMessage.date;
+		  	dateLine.innerHTML = "Date: " + newMessageBlock.date;
 		  	emailLine.appendChild(dateLine);
 
 		  	var bodyLine = document.createElement("div");
 		  	bodyLine.className = "col-6 emailBodyContent";
-		  	bodyLine.innerHTML = getNewMessage.body;
+		  	bodyLine.innerHTML = newMessageBlock.body;
 		  	emailLine.appendChild(bodyLine);
 
 		  	var line = document.createElement("hr");
 		  	line.className = "hrClass";
 		  	emailWrapper.appendChild(line);
-		}
+
+		  	geemails.push(getNewMessage);
+		// }
+
   		}
   		loadNewMail(getNewMessage);
 
