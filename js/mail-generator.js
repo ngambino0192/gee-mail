@@ -37,7 +37,7 @@ var test = "test";
     var now = new Date();
     return generateMessage(now);
   }
-  console.log(getNewMessage());
+  // console.log(getNewMessage());
 
   function getRandomDate(){
     var year = 2017;

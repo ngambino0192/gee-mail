@@ -58,7 +58,7 @@
 
 		  	var bodyLine = document.createElement("div");
 		  	bodyLine.className = "col-6 emailBodyContent";
-		  	bodyLine.innerHTML = data[i].body;
+		  	bodyLine.innerHTML = "Body:" + "<br>" + "<br>" + data[i].body;
 		  	emailLine.appendChild(bodyLine);
 
 		  	var line = document.createElement("hr");
@@ -68,18 +68,15 @@
   		}
   		renderGeemails(geemails);
 
-     // set interval function
+    // set interval function
 
   		var newMail = setInterval(function(){ loadNewMail(); }, 2000);
 
   	// add new mail
 
   		function loadNewMail(){
-  	
-  	// randomize new mail
 
   			var newMessageBlock = getNewMessage();
-  			// console.log(newMessageBlock);
 
   			var emailLine = document.createElement("div");
 		  	emailLine.className = "col-7 emailLineClass";
@@ -120,12 +117,11 @@
 		  	line.className = "hrClass";
 		  	emailWrapper.appendChild(line);
 
-	// count new mail
+			// count new mail
 
 		  	var inboxCounter = geemails.length;
-			// console.log(inboxCounter);
 
-			var displayInboxCount = document.getElementsByTagName("a")[0];
+			var displayInboxCount = document.getElementsByTagName("button")[1];
 			displayInboxCount.innerHTML = "Inbox: (" + inboxCounter + ")";
 
 		  	geemails.push(getNewMessage());
@@ -169,17 +165,24 @@
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
 
     };
+    
+    // reload page
+
+    	function refreshInbox(){
+		location.reload();
+	}
+
     </script>
 	</head>
 	<body>
 		<div class="sidenav">
-			<button type="button">GET NEW MAIL</button>
+			<button type="button" id="mainbutton">GET NEW MAIL</button>
 			<hr>
-  			<a href="#about">About</a>
-  			<a href="#services">Refresh Inbox</a>
-  			<a href="#clients">Filter Spam</a>
-  			<a href="#contact">Btn 4</a>
-  			<hr>
+  			<button type="button"></a>
+  			<button type="button" onclick="refreshInbox()">Refresh Inbox</a>
+  			<button type="button">Filter Spam</a>
+  			<button type="button">Btn 4</a>
+  			
 		</div>
 		<!-- <div class="container" id="main">
 			Build Me!
