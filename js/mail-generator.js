@@ -1,8 +1,4 @@
-var test = "test";
-// console.log(test);
-
 (function(){
-  /*This is the mail generator file that will generate initial mail messages and expose methods for creating new messages in your project. Do not make any modifications to this file for your solution. Happy coding!*/
 
 //Gee Mail message stub data 
 
@@ -27,7 +23,6 @@ var test = "test";
     message.body = getRandomElement(body);
     return message;
   }
- // generateMessage();
 
   function getRandomElement(arr){
     return arr[Math.floor(Math.random() * arr.length)];
@@ -37,7 +32,6 @@ var test = "test";
     var now = new Date();
     return generateMessage(now);
   }
-  // console.log(getNewMessage());
 
   function getRandomDate(){
     var year = 2017;
@@ -51,8 +45,6 @@ var test = "test";
 //load intial GeeMail data to window object
 
   window.geemails = [];
-  console.log(window.geemails);
   window.getNewMessage = getNewMessage;
-  // console.log(getNewMessage());
   loadGeeMails();
 })();

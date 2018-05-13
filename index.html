@@ -6,9 +6,11 @@
     <script>
     window.onload = function (){
 
+	// structure
+
 	  	var emailHeader = document.createElement("div");
 	    emailHeader.id = "emailHeaderId";
-	    emailHeader.innerHTML = "GEEMAIL";
+	    emailHeader.innerHTML = "<img src=\"images/logo.svg\"/>";
 	    document.body.appendChild(emailHeader);
 
 	  	var rightWindow = document.createElement("div");
@@ -22,6 +24,8 @@
 	  	var emailWrapper = document.createElement("div");
 	    emailWrapper.id = "col-6 emailWrapperId";
 	    inboxWrapper.appendChild(emailWrapper);
+
+	// render initial mail
 
   		function renderGeemails(data){
     	for (var i=0; i<geemails.length; i++){
@@ -64,6 +68,7 @@
 		  	var line = document.createElement("hr");
 		  	line.className = "hrClass";
 		  	emailWrapper.appendChild(line);
+
     		}
   		}
   		renderGeemails(geemails);
@@ -117,7 +122,7 @@
 		  	line.className = "hrClass";
 		  	emailWrapper.appendChild(line);
 
-			// count new mail
+	// count incoming mail
 
 		  	var inboxCounter = geemails.length;
 
@@ -160,12 +165,8 @@
 	        toggleCarrot2.style.display = "none";
 	      	}
 	  	}
-
-        // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
-        // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-
     };
-    
+ 
     // reload page
 
     	function refreshInbox(){
@@ -175,18 +176,11 @@
     </script>
 	</head>
 	<body>
-		<div class="sidenav">
-			<button type="button" id="mainbutton">GET NEW MAIL</button>
+		<div id="sidenav">
+			<button type="button" id="mainbutton" onclick="refreshInbox()">REFRESH</button>
 			<hr>
   			<button type="button"></a>
-  			<button type="button" onclick="refreshInbox()">Refresh Inbox</a>
-  			<button type="button">Filter Spam</a>
-  			<button type="button">Btn 4</a>
-  			
 		</div>
-		<!-- <div class="container" id="main">
-			Build Me!
-		</div> -->
 		<script src="js/mail-generator.js"></script>
 	</body>
 </html>

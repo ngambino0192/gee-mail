@@ -23,7 +23,6 @@ body {
 .col-4 {width: 50%;}
 .col-5 {width: 28%;}
 .col-6 {width: 100%;}
-
 .col-7 {width: 100%;}
 .col-8 {width: 90%;}
 .col-9 {width: 75%;}
@@ -36,7 +35,6 @@ body {
   width: auto;
   height: relative;
   padding: 1px;
-  background-color: white;
   border-style: solid;
   border-width: 1px;
   box-sizing: border-box;
@@ -49,7 +47,7 @@ body {
   text-align: center;
   padding-top: 12.5px;
   font-size: 25px;
-  background-color: salmon;
+  background-color: cornflowerblue;
 }
 
 #emailFooterId{
@@ -57,7 +55,7 @@ body {
   margin-left: -10%;
   width: 110%;
   height: 50px;
-  background-color: salmon;
+  background-color: cornflowerblue;
 }
 
 #inboxCountId{
@@ -72,6 +70,11 @@ body {
 #emailWrapperId{
   margin: auto;
   width: auto;
+  /*background-color: lightSteelBlue;*/
+}
+
+#emailWrapperId:hover{
+  background-color: lightSteelBlue;
 }
 
 #rightWindowId{
@@ -79,7 +82,7 @@ body {
   height: 100%;
 }
 
-.sidenav {
+#sidenav {
   height: auto;
   width: 125px;
   margin-top: 5%;
@@ -90,7 +93,7 @@ body {
   padding-bottom: 5px;
 }
 
-.sidenav #mainbutton{
+#sidenav #mainbutton{
   background-color: tomato;
   padding-top: 8px;
   padding-bottom: 8px;
@@ -102,12 +105,12 @@ body {
   display: block;
 }
 
-.sidenav #mainbutton:hover {
+#sidenav #mainbutton:hover {
     background-color: maroon;
     cursor: pointer;
 }
 
-.sidenav button {
+#sidenav button {
   background-color: LightGray;
   width: 100%;
   opacity: 0%;
@@ -120,7 +123,7 @@ body {
   text-align: left;
 }
 
-.sidenav button:hover {
+#sidenav button:hover {
     background-color: Gray;
     cursor: pointer;
 }
@@ -149,10 +152,10 @@ body {
 }
 
 .dateLineClass {
-  background-color: gray;
+  /*background-color: gray;*/
   float: left;
   width: auto;
-  font-size: 10px;
+  font-size: 12px;
   display: block;
   box-sizing: border-box;
 }
@@ -161,8 +164,11 @@ body {
   float: left;
   font-size: 10px;
   display: none;
-  background-color: orange;
+  background-color: GhostWhite;
   box-sizing: border-box;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+     -moz-box-shadow: 0 10px 6px -6px #777;
+          box-shadow: 0 10px 6px -6px #777;
 }
 
 .hrClass{
